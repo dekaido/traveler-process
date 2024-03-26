@@ -3,7 +3,7 @@
 ### Result: Fails to build?
 
 #### Create project from Sandbox
-1. Open [KIE Sandbox])(sandbox.kie.org/)
+1. Open [KIE Sandbox](sandbox.kie.org/)
 2. Click [Try Sample](https://sandbox.kie.org/#/import?url=https://sandbox.kie.org/samples/Sample.bpmn) under "Workflow"
 3. Click "Apply Accelerator" > "Quarkus..." > Accept
 4. Click "Share" > (Download) "All files"
