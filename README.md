@@ -61,3 +61,27 @@
             at org.jboss.threads.JBossThread.run(JBossThread.java:501)
 
      ```
+### No Kogito
+Quarkus runs, kafka warnings
+```
+2024-03-29 11:18:14,549 INFO  [io.sma.rea.mes.kafka] (smallrye-kafka-producer-thread-0) SRMSG18258: Kafka producer kafka-producer-kogito-processinstances-events, connected to Kafka brokers 'localhost:9092', is configured to write records to 'kogito-processinstances-events'
+2024-03-29 11:18:14,574 INFO  [io.sma.rea.mes.kafka] (smallrye-kafka-producer-thread-1) SRMSG18258: Kafka producer kafka-producer-kogito-usertaskinstances-events, connected to Kafka brokers 'localhost:9092', is configured to write records to 'kogito-usertaskinstances-events'
+2024-03-29 11:18:14,579 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | kafka-producer-kogito-processinstances-events) [Producer clientId=kafka-producer-kogito-processinstances-events] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
+2024-03-29 11:18:14,579 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | kafka-producer-kogito-usertaskinstances-events) [Producer clientId=kafka-producer-kogito-usertaskinstances-events] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
+2024-03-29 11:18:14,580 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | kafka-producer-kogito-processinstances-events) [Producer clientId=kafka-producer-kogito-processinstances-events] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2024-03-29 11:18:14,580 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | kafka-producer-kogito-usertaskinstances-events) [Producer clientId=kafka-producer-kogito-usertaskinstances-events] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2024-03-29 11:18:14,580 INFO  [io.sma.rea.mes.kafka] (smallrye-kafka-producer-thread-2) SRMSG18258: Kafka producer kafka-producer-kogito-variables-events, connected to Kafka brokers 'localhost:9092', is configured to write records to 'kogito-variables-events'
+2024-03-29 11:18:14,581 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | kafka-producer-kogito-variables-events) [Producer clientId=kafka-producer-kogito-variables-events] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
+2024-03-29 11:18:14,581 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | kafka-producer-kogito-variables-events) [Producer clientId=kafka-producer-kogito-variables-events] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2024-03-29 11:18:14,583 WARN  [io.sma.rea.mes.provider] (main) SRMSG00207: Some components are not connected to either downstream consumers or upstream producers:
+        - OutgoingConnector{channel:'kogito-processinstances-events', attribute:'mp.messaging.outgoing.kogito-processinstances-events'} has no upstream
+        - OutgoingConnector{channel:'kogito-usertaskinstances-events', attribute:'mp.messaging.outgoing.kogito-usertaskinstances-events'} has no upstream
+        - OutgoingConnector{channel:'kogito-variables-events', attribute:'mp.messaging.outgoing.kogito-variables-events'} has no upstream
+
+2024-03-29 11:18:14,629 INFO  [io.quarkus] (main) quarkus-accelerator 1.0.0 on JVM (powered by Quarkus 2.15.3.Final) started in 0.674s. Listening on: http://0.0.0.0:8080
+2024-03-29 11:18:14,629 INFO  [io.quarkus] (main) Profile prod activated. 
+2024-03-29 11:18:14,630 INFO  [io.quarkus] (main) Installed features: [cdi, kafka-client, resteasy-jackson, smallrye-context-propagation, smallrye-health, smallrye-openapi, smallrye-reactive-messaging, smallrye-reactive-messaging-kafka, swagger-ui, vertx]
+2024-03-29 11:18:14,680 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | kafka-producer-kogito-usertaskinstances-events) [Producer clientId=kafka-producer-kogito-usertaskinstances-events] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
+2024-03-29 11:18:14,680 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | kafka-producer-kogito-processinstances-events) [Producer clientId=kafka-producer-kogito-processinstances-events] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
+2024-03-29 11:18:14,680 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | kafka-producer-kogito-usertaskinstances-events) [Producer clientId=kafka-producer-kogito-usertaskinstances-events] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+```
